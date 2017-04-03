@@ -15,16 +15,24 @@ class AllPlants extends Component {
             {name:"Ficus", scheduled:"weekly", location:"indoor", watered:"false", image:"https://maxpull-gdvuch3veo.netdna-ssl.com/wp-content/uploads/2012/02/ficus1-681x1024.jpg", value: ""},
             {name:"Aloe Vera", scheduled:"bi-weekly", location:"indoor", watered:"true", image:"http://www.ikea.com/us/en/images/products/aloe-vera-potted-plant__0173210_PE327299_S4.JPG", value: ""}
           ],
-          month: "mm",
-          day: "dd"
+          date: new Date(),
         }
       }
 
+    handleDateInput = (event) =>{
+      this.setState({date: event.target.value});
+    }
+
+    handleSubmit = (event) =>{
+      console.log(this.state.date)
+    }
 
 
 
 
   render(){
+    let today = new Date()
+    const date = this.state.date
     const plant = this.state.plants.map((item, index) => {
       return <div key={item.index}>
                 <h1> {item.name} </h1>
@@ -33,10 +41,11 @@ class AllPlants extends Component {
                     <li> Needs Water: {item.scheduled}</li>
                     <li> Location: {item.location} </li>
                     <li> Last Watered:
-                      <input type="date">
+                      <input type="date" onChange={this.handleDateInput}>
                       </input>
-                        <button>submit</button>
+                        <button onClick={this.handleSubmit}>submit</button>
                     </li>
+                    <li>Watered by:<PlantComponent /></li>
                 </ul>
              </div>
           })
