@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import AllPlants from './AllPlants.js';
+import { Link } from 'react-router'
 
 class PlantComponent extends Component {
-  render() {
-     const plant = this.props.plants.map((item, i) => {
-      return <div>
-                <img className="plantImage" src={item.image} />
-                <h1>{item.name}</h1>
+    constructor(props){
+      super(props)
+
+    }
+  render(){
+    const plantInfo = this.props.plants.map((item, index) => {
+      return <div key={item.index}>
+                <ul>
+                  <li> Needs Water: {item.scheduled}</li>
+                  <li> Location: {item.location} </li>
+                </ul>
              </div>
-            })
+          })
+
     return (
       <div>
-        {plant}
+        {plantInfo}
       </div>
     )
   }
