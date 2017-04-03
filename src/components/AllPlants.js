@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PlantComponent from './PlantComponent.js'
-import { Link } from 'react-router'
 
 class AllPlants extends Component {
       constructor(props){

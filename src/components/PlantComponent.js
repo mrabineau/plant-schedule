@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
 
 class PlantComponent extends Component {
   constructor(props){
@@ -10,11 +9,9 @@ class PlantComponent extends Component {
 
       const names = ["Mel", "Veronica", "Jesse", "Will", "Matt"]
       const listItems = names.map((name) =>
-
             <option key={name.index}>
               {name}
             </option>
-
         )
     return(
       <div>
