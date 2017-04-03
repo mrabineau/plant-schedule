@@ -31,7 +31,6 @@ class AllPlants extends Component {
 
   render(){
     let today = new Date()
-    const date = this.state.date
     const plant = this.state.plants.map((item, index) => {
       return <div key={item.index}>
                 <h1> {item.name} </h1>
@@ -39,15 +38,16 @@ class AllPlants extends Component {
                   <ul>
                     <li> Needs Water: {item.scheduled}</li>
                     <li> Location: {item.location} </li>
-                    <li> Last Watered: <br></br>
-                      <input type="date" onChange={this.handleDateInput}>
-                      </input>
-                        <button onClick={this.handleSubmit}>submit</button>
-                    </li>
+                      <li> Last Watered: <br></br>
+                        <input type="date" onChange={this.handleDateInput}>
+                        </input>
+                          <button onClick={this.handleSubmit}>submit</button>
+                      </li>
                     <li>Watered by:<PlantComponent /></li>
                 </ul>
              </div>
-          })
+          });
+
     return(
       <div>
         {plant}
