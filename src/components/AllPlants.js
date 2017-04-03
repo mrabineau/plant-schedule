@@ -39,7 +39,7 @@ class AllPlants extends Component {
                   <ul>
                     <li> Needs Water: {item.scheduled}</li>
                     <li> Location: {item.location} </li>
-                    <li> Last Watered:
+                    <li> Last Watered: <br></br>
                       <input type="date" onChange={this.handleDateInput}>
                       </input>
                         <button onClick={this.handleSubmit}>submit</button>
